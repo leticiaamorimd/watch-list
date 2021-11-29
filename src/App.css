@@ -26,9 +26,10 @@ h1 {
   font-size: 24px;
 }
 
-.isWatched {
+#oi {
   text-decoration: line-through;
   opacity: 0.4;
+  background-color: hotpink;
 }
 
 .form {
@@ -77,11 +78,11 @@ button {
   padding: 16px 22px;
 }
 
-.title-container {
+/*.title-container {
   display: flex;
   flex-direction: row;
   position: relative;
-}
+}*/
 
 .title-row {
   display: flex;
@@ -139,8 +140,9 @@ button {
   color: #fff;
 }
 
-.titles {
+.title-container {
   color: white;
+  border: 1px;
 }
 
 p {

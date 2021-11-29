@@ -40,12 +40,18 @@ function WatchList() {
         });
         setTitles(updateTitles);
     }
+
+    const removeAll = id => {
+        const removeArr = [titles];
+
+        setTitles(removeArr);
+      };
     return (
         <div className="container">
         <div className="watch-list-container">
             <h1>WATCH LIST</h1>
             <Form onSubmit={addTitle}/>
-            <Title titles={titles}
+            <Title className="title-container" titles={titles}
             updateTitle={updateTitle}
             watchedTitle={watchedTitle}
             removeTitle={removeTitle} />
@@ -53,7 +59,7 @@ function WatchList() {
        
         
         <button>Remove All Watched</button>
-        <button>Remove All</button>
+        <button onClick={removeAll}>Remove All</button>
 
         </div>
     )

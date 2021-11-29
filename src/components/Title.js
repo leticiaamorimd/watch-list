@@ -25,7 +25,7 @@ if(edit.id) {
 }
 
 return titles.map((title, index) => (
-    <div className={title.isWatched ? 'title-row watched' : 'title.row'} 
+    <div id="oi" className={title.isWatched ? 'title-row watched' : 'title.row'} 
         key={index}>
               <div key={title.id} onClick={() => watchedTitle(title.id)}>
         {title.text}
