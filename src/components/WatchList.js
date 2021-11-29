@@ -4,7 +4,8 @@ import Title from './Title';
 
 
 function WatchList() {
-    const [titles, setTitles] = useState([]);
+    const [titles, setTitles] = useState([]
+    )
 
     const addTitle = title => {
         if(!title.text || /^\s*$/.test(title.text)) {
@@ -23,6 +24,19 @@ function WatchList() {
         setTitles(prev => prev.map(item => (item.id === titleId ? newValue : item))
         );
     };
+
+  
+    const watchedTitle = watched => {
+        let updateTitle = titles.map(title => {
+            if(titles.watched === true) {
+                alert('hi')
+                title.isWatched = !title.isWatched
+            } 
+        return title;
+        });
+        setTitles(updateTitle);
+    }
+ 
     
 
     const removeTitle = id => {
@@ -31,27 +45,18 @@ function WatchList() {
         setTitles(removeArr);
       };
 
-    const watchedTitle = id => {
-        let updateTitles = titles.map(title => {
-            if(titles.id === id) {
-                title.isWatched = !title.isWatched
-            } 
-            return title;
-        });
-        setTitles(updateTitles);
-    }
-
     const removeAll = id => {
-        const removeArr = [titles];
+        const removeArr = [];
 
         setTitles(removeArr);
       };
+
     return (
         <div className="container">
         <div className="watch-list-container">
             <h1>WATCH LIST</h1>
             <Form onSubmit={addTitle}/>
-            <Title className="title-container" titles={titles}
+            <Title  className="title-container" titles={titles}
             updateTitle={updateTitle}
             watchedTitle={watchedTitle}
             removeTitle={removeTitle} />
