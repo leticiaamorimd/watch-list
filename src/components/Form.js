@@ -1,7 +1,13 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 
 function Form(props) {
 const [input, setInput] = useState('');
+
+const inputRef = useRef(null);
+
+useEffect(() => {
+    inputRef.current.focus();
+})
 
 const handleChange = e => {
     setInput(e.target.value);
@@ -10,7 +16,6 @@ const handleChange = e => {
 
 const handleSubmit = e => {
     e.preventDefault();
-
     props.onSubmit({
         id: Math.floor(Math.random() * 10000), //giving input an id - *10000 unlikely to repeat
         text: input
@@ -23,7 +28,8 @@ const handleSubmit = e => {
                 <input type="text" placeholder="Add a title" 
                 value={input} name="text" 
                 className="form-input"
-                onChange={handleChange}/>
+                onChange={handleChange}
+                ref={inputRef}/>
                 <button className="form-button"
                 >Add</button>
             </form>
