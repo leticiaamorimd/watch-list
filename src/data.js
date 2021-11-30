@@ -1,4 +1,4 @@
-const titles = [
+const dataTitles = [
     {
       "id": 625,
       "name": "Bridgette",
@@ -36,4 +36,4 @@ const titles = [
     }
   ]
 
-  export default titles;
+  export default dataTitles;

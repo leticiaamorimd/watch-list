@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Form from './Form';
 import Title from './Title';
-
+import RenderList from './RenderList';
 
 function WatchList() {
     const [titles, setTitles] = useState([]
@@ -56,6 +56,12 @@ function WatchList() {
         <div className="watch-list-container">
             <h1>WATCH LIST</h1>
             <Form onSubmit={addTitle}/>
+            
+            <RenderList className="title-container" titles={titles}
+            updateTitle={updateTitle}
+            watchedTitle={watchedTitle}
+            removeTitle={removeTitle}/>
+
             <Title  className="title-container" titles={titles}
             updateTitle={updateTitle}
             watchedTitle={watchedTitle}
