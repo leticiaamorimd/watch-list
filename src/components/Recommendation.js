@@ -45,13 +45,13 @@ function Recommendation(props) {
     
     return (
           <div className="recommendation">
-            <h3> Recommendations</h3>
+            <h2> Recommended Movies</h2>
             <h3>{suggestion.name}</h3>
             <button variant="outline-success"   onClick={handleSubmit}>
-              Add to my list!
+              Add to my list
             </button>
             <button variant="outline-info" onClick={refreshPage}>
-              Get new Recommendation
+              Get new recommendation
             </button>
             </div>
   );

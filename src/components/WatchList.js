@@ -25,9 +25,9 @@ function WatchList() {
     };
 
 
-    const watchedTitle = id => {
+    const watchedTitle = (id, watched) => {
         let updatedTitles = titles.map(title => {
-          if (title.id === id) {
+          if (title.watched === watched) {
             title.watched = !title.watched;
           }
           return title;
@@ -78,7 +78,6 @@ function WatchList() {
         
         <button onClick={removeWatched}>Remove All Watched</button>
         <button onClick={removeAll}>Remove All</button>
-
         </div>
     )
 }
