@@ -12,7 +12,7 @@
   justify-content: start;
   width: 520px;
   min-height: 600px;
-  background: #9fa2ac;
+  background: #c9cfe2;
   text-align: center;
   margin: 128px auto;
   border-radius: 10px;
@@ -26,7 +26,8 @@
 h1 {
   margin: 32px 0;
   color: #fff;
-  font-size: 24px;
+  font-size: 28px;
+  text-decoration: underline;
 }
 
 .form {
@@ -41,6 +42,8 @@ h1 {
   width: 320px;
   background: transparent;
   color: #fff;
+  font-weight: bold;
+  font-size: 14px;
 }
 
 .form-input::placeholder {
@@ -61,6 +64,11 @@ button {
   color: #fff;
   text-transform: capitalize;
   margin: 1.5px;
+}
+
+.remove-buttons {
+  width: 80%;
+  background-color: red;
 }
 
 .recommendation-button {
