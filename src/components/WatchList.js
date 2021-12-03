@@ -75,9 +75,10 @@ function WatchList() {
             removeTitle={removeTitle} />
         </div>
        
-        
+        <div className="remove-buttons">
         <button onClick={removeWatched}>Remove All Watched</button>
         <button onClick={removeAll}>Remove All</button>
+        </div>
         </div>
     )
 }

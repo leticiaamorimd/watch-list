@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import Form from './Form'
 import { AiFillEdit } from 'react-icons/ai'
 import { MdDelete } from 'react-icons/md'
-import Recommendation from './Recommendation'
 
 function Title({ titles, watchedTitle, removeTitle, updateTitle}) {
 const [edit, setEdit] = useState({
