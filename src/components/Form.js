@@ -18,7 +18,8 @@ const handleSubmit = e => {
     e.preventDefault();
     props.onSubmit({
         id: Math.floor(Math.random() * 10000), //giving input an id - *10000 unlikely to repeat
-        text: input
+        text: input,
+        watched: false
     })
 }
 

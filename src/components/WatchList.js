@@ -1,11 +1,10 @@
 import React, {useState} from 'react';
 import Form from './Form';
 import Title from './Title';
-import RenderList from './RenderList';
+import Recommendation from './Recommendation'
 
 function WatchList() {
-    const [titles, setTitles] = useState([]
-    )
+    const [titles, setTitles] = useState([])
 
     const addTitle = title => {
         if(!title.text || /^\s*$/.test(title.text)) {
@@ -25,25 +24,34 @@ function WatchList() {
         );
     };
 
-  
-    const watchedTitle = watched => {
-        let updateTitle = titles.map(title => {
-            if(titles.watched === true) {
-                alert('hi')
-                title.isWatched = !title.isWatched
-            } 
-        return title;
-        });
-        setTitles(updateTitle);
-    }
- 
-    
 
+    const watchedTitle = id => {
+        let updatedTitles = titles.map(title => {
+          if (title.id === id) {
+            title.watched = !title.watched;
+          }
+          return title;
+        });
+        setTitles(updatedTitles);
+      };
+    
+ 
     const removeTitle = id => {
         const removeArr = [...titles].filter(title => title.id !== id);
 
         setTitles(removeArr);
       };
+
+    const removeWatched = id => {
+        const watched = titles.filter((title) => {
+            if (title.watched === true) {
+                return false
+            }
+            return true
+        })
+        setTitles(watched)
+    }
+
 
     const removeAll = id => {
         const removeArr = [];
@@ -55,21 +63,20 @@ function WatchList() {
         <div className="container">
         <div className="watch-list-container">
             <h1>WATCH LIST</h1>
+           
             <Form onSubmit={addTitle}/>
             
-            <RenderList className="title-container" titles={titles}
-            updateTitle={updateTitle}
-            watchedTitle={watchedTitle}
-            removeTitle={removeTitle}/>
-
-            <Title  className="title-container" titles={titles}
+            <Recommendation onSubmit={addTitle}/>
+         
+            <Title  className="title-container"
+            titles={titles}
             updateTitle={updateTitle}
             watchedTitle={watchedTitle}
             removeTitle={removeTitle} />
         </div>
        
         
-        <button>Remove All Watched</button>
+        <button onClick={removeWatched}>Remove All Watched</button>
         <button onClick={removeAll}>Remove All</button>
 
         </div>

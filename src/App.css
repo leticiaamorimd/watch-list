@@ -2,10 +2,9 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
-
 
 .container {
   display: flex;
@@ -25,7 +24,6 @@ h1 {
   color: #fff;
   font-size: 24px;
 }
-
 
 .form {
   margin-bottom: 32px;
@@ -73,16 +71,12 @@ button {
   padding: 16px 22px;
 }
 
-/*.title-container {
-  display: flex;
-  flex-direction: row;
-  position: relative;
-}*/
-.isWatched {
+.title.watched {
   text-decoration: line-through;
   opacity: 0.4;
   background-color: hotpink;
 }
+
 .title-row {
   display: flex;
   justify-content: space-between;
