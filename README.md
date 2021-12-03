@@ -1,3 +1,15 @@
+###
+
+### technologies used: React and CSS
+
+### React icons: https://react-icons.github.io/react-icons/
+
+### the approach taken:
+
+### unsolved problems: watched element
+
+### installation instructions:
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,16 +80,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-
-### technologies used: 
-### React icons: https://react-icons.github.io/react-icons/
-
-
-### the approach taken: 
-
-
-### installation instructions:
-
-### unsolved problems, documentation assets, and any other useful information.
-
