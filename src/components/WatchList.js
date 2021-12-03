@@ -25,9 +25,9 @@ function WatchList() {
     };
 
 
-    const watchedTitle = (id, watched) => {
+    const watchedTitle = id => {
         let updatedTitles = titles.map(title => {
-          if (title.watched === watched) {
+          if (title.id === id) {
             title.watched = !title.watched;
           }
           return title;

@@ -9,15 +9,15 @@ function Title({ titles, watchedTitle, removeTitle, updateTitle}) {
 const [edit, setEdit] = useState({
     id: null,
     value: '',
-    watched: null
+    watched: ''
 });
 
 const submitUpdate = value => {
     updateTitle(edit.id, value);
     setEdit({
-      id: null,
+      id: '',
       value: '',
-      watched: null
+      watched: ''
     });
   };
 
@@ -26,10 +26,15 @@ if(edit.id) {
 }
 
 return titles.map((title,  index) => (
-    <div  className={title.watched ? 'title-row watched' : 'title-row'} 
-        key={index}>
-              <h2 onClick={() => watchedTitle(title.id)}>        {title.text}</h2>
-      <BiRadioCircleMarked />
+  <div
+  className={title.watched ? 'title-row watched' : 'title-row'}
+  key={index}
+>
+    <div key={title.id} onClick={() => watchedTitle(title.id)}>
+    {title.text}
+      </div>
+   
+      <BiRadioCircleMarked  onClick={() => watchedTitle({ id: title.id })} />
       
       <AiFillEdit onClick={() => setEdit({ id: title.id, value: title.text })}
           className='edit-icon'
@@ -41,3 +46,12 @@ return titles.map((title,  index) => (
 };
 
 export default Title;
+
+
+
+/*
+<div  className={title.watched ? 'title-row watched' : 'title-row'} 
+key={index}>
+  <div  key={title.id} 
+      <h2 onClick={() => watchedTitle(title.id)}>        {title.text}</h2>
+*/

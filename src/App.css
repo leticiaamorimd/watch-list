@@ -60,6 +60,16 @@ button {
   );
   color: #fff;
   text-transform: capitalize;
+  margin: 1.5px;
+}
+
+.recommendation-button {
+  padding: 10px;
+}
+
+.recommendation-title {
+  text-decoration: underline;
+  margin: 3px;
 }
 
 .form-input.edit {
@@ -75,7 +85,7 @@ button {
   padding: 16px 22px;
 }
 
-.title.watched {
+.watched {
   text-decoration: line-through;
   opacity: 0.4;
   background-color: hotpink;

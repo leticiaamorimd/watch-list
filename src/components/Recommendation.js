@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 
 
+
 function Recommendation(props) {
     const [titles, setTitles] = useState([]);
     const [suggestion, setSuggestion] = useState([]);
-    const [input, setInput] = useState('');
 
 
     useEffect(() => {
@@ -45,12 +45,12 @@ function Recommendation(props) {
     
     return (
           <div className="recommendation">
-            <h2> Recommended Movies</h2>
-            <h3>{suggestion.name}</h3>
-            <button variant="outline-success"   onClick={handleSubmit}>
+            <h3> Recommended Movies</h3>
+            <h2 className="recommendation-title">{suggestion.name}</h2>
+            <button className="recommendation-button" variant="outline-success"   onClick={handleSubmit}>
               Add to my list
             </button>
-            <button variant="outline-info" onClick={refreshPage}>
+            <button className="recommendation-button" variant="outline-info" onClick={refreshPage}>
               Get new recommendation
             </button>
             </div>
