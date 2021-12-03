@@ -3,9 +3,12 @@ import { useState, useEffect } from "react";
 
 
 function Recommendation(props) {
-    const [titles, setTitles] = useState([]);
     const [suggestion, setSuggestion] = useState([]);
 
+
+    function refreshPage() {
+      window.location.reload();
+    }
 
     useEffect(() => {
         async function getData() {
@@ -19,20 +22,14 @@ function Recommendation(props) {
         getData();
       }, []);
     
-      function refreshPage(event) {
-        window.location.reload();
-        event.preventDefault()
-      }
+ 
     
       useEffect(() => {
-        localStorage.setItem("titles", JSON.stringify(titles));
-      }, [titles]);
+        localStorage.setItem("titles", JSON.stringify(suggestion));
+      }, [suggestion]);
 
 
-      function addSuggestion(event) {
-        event.preventDefault()
-        setTitles([...titles, { name: suggestion.name, watched: false }])
-    }
+
 
     const handleSubmit = e => {
         props.onSubmit({
@@ -40,8 +37,6 @@ function Recommendation(props) {
             text: suggestion.name
         })
     }
-   
-    
     
     return (
           <div className="recommendation">

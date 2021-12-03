@@ -88,7 +88,6 @@ button {
 .watched {
   text-decoration: line-through;
   opacity: 0.4;
-  background-color: hotpink;
 }
 
 .title-row {

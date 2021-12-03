@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import Form from './Form'
 import { AiFillEdit } from 'react-icons/ai'
 import { MdDelete } from 'react-icons/md'
-import { BiRadioCircleMarked } from 'react-icons/bi'
 import Recommendation from './Recommendation'
 
 function Title({ titles, watchedTitle, removeTitle, updateTitle}) {
@@ -33,9 +32,7 @@ return titles.map((title,  index) => (
     <div key={title.id} onClick={() => watchedTitle(title.id)}>
     {title.text}
       </div>
-   
-      <BiRadioCircleMarked  onClick={() => watchedTitle({ id: title.id })} />
-      
+         
       <AiFillEdit onClick={() => setEdit({ id: title.id, value: title.text })}
           className='edit-icon'
         />
@@ -48,10 +45,3 @@ return titles.map((title,  index) => (
 export default Title;
 
 
-
-/*
-<div  className={title.watched ? 'title-row watched' : 'title-row'} 
-key={index}>
-  <div  key={title.id} 
-      <h2 onClick={() => watchedTitle(title.id)}>        {title.text}</h2>
-*/
